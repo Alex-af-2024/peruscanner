@@ -34,3 +34,4 @@ namespace peruscanner.Views
         }
     }
 }
+//intentar anular aviso positivo de usuasio

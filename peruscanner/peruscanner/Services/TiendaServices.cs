@@ -10,7 +10,7 @@ namespace peruscanner.Services
 {
     internal class TiendaServices
     {
-        // Agregado
+        // Esta clase se encarga de obtener info de una tienda mediande solicitud HTTP a algun endpoint(url)
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly string _apiURL = "https://apa.educk.cl/api/v1/";
         private readonly string _tienda = "acotango";
@@ -18,11 +18,11 @@ namespace peruscanner.Services
         public async Task<Tienda> ObtenerTienda() // ASíncrono para no esperar cargar toda la app y mostrar info.
         {
             var url = _apiURL + _tienda;
-            var respuesta = await _httpClient.GetAsync(url);
-            if (respuesta.IsSuccessStatusCode)
+            var respuesta = await _httpClient.GetAsync(url);// Se espera una respuesta sin romper hilo
+            if (respuesta.IsSuccessStatusCode) // Exitoso da internamente codigo HTTP 200
             {
-                var contenido = await respuesta.Content.ReadAsStringAsync();
-                var tienda = JsonConvert.DeserializeObject<Tienda>(contenido);
+                var contenido = await respuesta.Content.ReadAsStringAsync(); // Se lee como string con formato json.
+                var tienda = JsonConvert.DeserializeObject<Tienda>(contenido);//contenido json se deserializa a Object Tienda, lista para usar en nuestra app.
 
                 return tienda;
             }

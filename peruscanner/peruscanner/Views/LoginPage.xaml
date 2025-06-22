@@ -7,9 +7,14 @@
              x:Class="peruscanner.Views.LoginPage"
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+        <StackLayout Padding="10" VerticalOptions="Center" Spacing="15">
+            <Label Text="Inicia sesión" 
+                   FontAttributes="Bold" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center" />
+            <Entry x:Name="usernameEntry" Placeholder="Usuario" />
+            <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
+            <Button Text="Login" Clicked="LoginButton_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-    <<!--Antes de login-->

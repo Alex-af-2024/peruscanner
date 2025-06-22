@@ -15,7 +15,22 @@ namespace peruscanner.Views
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+        }
+
+        private async void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            // Validación de credenciales de ejemplo.
+            if (usernameEntry.Text == "afranco" && passwordEntry.Text == "afranco123")
+            {
+                await DisplayAlert("Login", "Inicio de sesión exitoso", "Ok");
+
+                // Una vez autenticado, se sustituye la MainPage por el AppShell.
+                Application.Current.MainPage = new AppShell();
+            }
+            else
+            {
+                await DisplayAlert("Error", "Usuario o contraseña incorrectos", "Ok");
+            }
         }
     }
 }

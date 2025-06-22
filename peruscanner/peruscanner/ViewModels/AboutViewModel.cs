@@ -10,12 +10,28 @@ namespace peruscanner.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
-        public string _logoUrl;//add
-        public string LogoUrl //add
+        public string _logoUrl;//variable a guardar  . Siempre agregar estas dos
+        public string LogoUrl // Variable a invocar
         {
             get => _logoUrl;
             set => SetProperty(ref _logoUrl, value);
         }
+
+        public string _nombre;//variable a guardar  . Siempre agregar estas dos
+        public string Nombre // Variable a invocar
+        {
+            get => _nombre;
+            set => SetProperty(ref _nombre, value);
+        }
+
+        public string _color;//variable a guardar  . Siempre agregar estas dos
+        public string Color // Variable a invocar
+        {
+            get => _color;
+            set => SetProperty(ref _color, value);
+        }
+
+
 
 
         public AboutViewModel()
@@ -36,6 +52,8 @@ namespace peruscanner.ViewModels
             {
                 Title = tienda.nombre;
                 LogoUrl = tienda.logo_path;
+                Color = tienda.color;
+                Nombre = tienda.nombre;
             }
         }
     }

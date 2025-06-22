@@ -22,7 +22,7 @@ namespace peruscanner.Views
             // Validación de credenciales de ejemplo.
             if (usernameEntry.Text == "afranco" && passwordEntry.Text == "afranco123")
             {
-                await DisplayAlert("Login", "Inicio de sesión exitoso", "Ok");
+                //await DisplayAlert("Login", "Inicio de sesión exitoso", "Ok");
 
                 // Una vez autenticado, se sustituye la MainPage por el AppShell.
                 Application.Current.MainPage = new AppShell();
@@ -34,4 +34,3 @@ namespace peruscanner.Views
         }
     }
 }
-//intentar anular aviso positivo de usuasio

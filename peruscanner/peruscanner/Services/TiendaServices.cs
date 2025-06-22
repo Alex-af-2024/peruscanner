@@ -15,13 +15,13 @@ namespace peruscanner.Services
         private readonly string _apiURL = "https://apa.educk.cl/api/v1/";
         private readonly string _tienda = "acotango";
 
-        public async Task<Tienda> ObtenerTienda()
+        public async Task<Tienda> ObtenerTienda() // ASíncrono para no esperar cargar toda la app y mostrar info.
         {
             var url = _apiURL + _tienda;
             var respuesta = await _httpClient.GetAsync(url);
             if (respuesta.IsSuccessStatusCode)
             {
-                var contenido = respuesta.Content.ReadAsStringAsync();
+                var contenido = await respuesta.Content.ReadAsStringAsync();
                 var tienda = JsonConvert.DeserializeObject<Tienda>(contenido);
 
                 return tienda;

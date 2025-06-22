@@ -30,6 +30,9 @@ namespace peruscanner.Views
             else
             {
                 await DisplayAlert("Error", "Usuario o contraseña incorrectos", "Ok");
+                // Se limpian los campos de texto
+                usernameEntry.Text = string.Empty;
+                passwordEntry.Text = string.Empty;
             }
         }
     }

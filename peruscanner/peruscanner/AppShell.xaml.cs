@@ -13,6 +13,10 @@ namespace peruscanner
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute("detalleproducto", typeof(DetalleProductoPage)); // Registra la ruta para el detalle del producto
+
+
+
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

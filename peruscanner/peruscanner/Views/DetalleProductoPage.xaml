@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="peruscanner.Views.DetalleProductoPage"
+    Title="Detalle del Producto">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="10">
+                <!-- Imagen del producto -->
+                <Image Source="{Binding Producto.logo}" 
+                     HeightRequest="200" 
+                     Aspect="AspectFit" />
+                <!-- Nombre del producto -->
+                <Label Text="{Binding Producto.nombre}" 
+                     FontAttributes="Bold" 
+                     FontSize="24" />
+                <!-- Descripción del producto -->
+                <Label Text="{Binding Producto.descripcion}" 
+                     FontSize="16" />
+                <!-- Precio del producto -->
+                <Label Text="{Binding Producto.precio_text}" 
+                     TextColor="Green" 
+                     FontSize="20" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

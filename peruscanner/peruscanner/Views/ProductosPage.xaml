@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="peruscanner.Views.ProductsPage"
+    Title="Productos">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- CollectionView que muestra la lista de productos -->
+            <CollectionView ItemsSource="{Binding Productos}"
+                          SelectionMode="Single"
+                          SelectionChanged="CollectionView_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" Padding="10" Margin="5" CornerRadius="5">
+                            <StackLayout>
+                                <Label Text="{Binding nombre}" FontAttributes="Bold" FontSize="18" />
+                                <Label Text="{Binding descripcion}" FontSize="14" />
+                                <Label Text="{Binding precio_text}" TextColor="Green" FontSize="16"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

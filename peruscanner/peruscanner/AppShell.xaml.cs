@@ -14,7 +14,7 @@ namespace peruscanner
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute("detalleproducto", typeof(DetalleProductoPage)); // Registra la ruta para el detalle del producto
-
+            Routing.RegisterRoute("QRScannerPage", typeof(QRScannerPage));
 
 
         }
@@ -22,6 +22,12 @@ namespace peruscanner
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//LoginPage");
+        }
+
+        private async void OnQRScannerClicked(object sender, EventArgs e)
+        {
+            // Navega a la página del lector QR 
+            await Shell.Current.GoToAsync("QRScannerPage");
         }
     }
 }

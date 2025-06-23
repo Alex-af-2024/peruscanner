@@ -74,7 +74,14 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-  
+
+    <!-- Agregar ToolbarItems para hacer accesible el lector QR en todas las pantallas -->
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="Escanear QR"
+                     IconImageSource="icon_qr.png"
+                     Clicked="OnQRScannerClicked" />
+    </Shell.ToolbarItems>
+    
     <FlyoutItem Title="About" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>

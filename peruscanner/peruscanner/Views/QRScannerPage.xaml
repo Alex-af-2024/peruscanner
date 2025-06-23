@@ -13,11 +13,13 @@
                               VerticalOptions="FillAndExpand"
                               OnScanResult="ScannerView_OnScanResult" />
             <!-- Opcional: una overlay para dar instrucciones -->
-            <Label Text="Alinea el código QR dentro del marco"
+            <Label Text="Lector de código QR"
              HorizontalOptions="Center"
              VerticalOptions="End"
              TextColor="White"
              Margin="0,0,0,40"/>
+            
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

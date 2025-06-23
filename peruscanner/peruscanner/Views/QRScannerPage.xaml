@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    x:Class="peruscanner.Views.QRScannerPage"
+    Title="Escanear QR">
+    <ContentPage.Content>
+        <Grid>
+            <!-- Vista del escáner -->
+            <zxing:ZXingScannerView x:Name="scannerView"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand"
+                              OnScanResult="ScannerView_OnScanResult" />
+            <!-- Opcional: una overlay para dar instrucciones -->
+            <Label Text="Alinea el código QR dentro del marco"
+             HorizontalOptions="Center"
+             VerticalOptions="End"
+             TextColor="White"
+             Margin="0,0,0,40"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

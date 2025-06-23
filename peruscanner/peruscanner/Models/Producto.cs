@@ -5,7 +5,7 @@ using System.Text;
 namespace peruscanner.Models
 {
     // Crearemos estructura de producto para que pueda interactuar con api
-    internal class Producto
+    public class Producto
     {
         public string id { get; set; }
         public string codigo { get; set; }
